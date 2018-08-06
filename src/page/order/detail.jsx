@@ -37,6 +37,7 @@ class OrderDetail extends React.Component {
     if (window.confirm('是否确认该订单已经发货？')) {
       Order.sendGoods(this.state.orderNumber).then((res) => {
         MUtil.successTips('发货成功');
+        //刷新界面
         this.loadOrderDetail();
       }, (errMsg) => {
         MUtil.errorTips(errMsg);
